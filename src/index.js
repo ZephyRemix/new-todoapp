@@ -1,4 +1,4 @@
 import appController from './appController.js'
-import domController from './domController.js'
+import './domController.js'
 
-const toDoApp = (function() {})();
+// const toDoApp = (function() {})();

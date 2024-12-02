@@ -1,4 +1,4 @@
-class Project {
+export default class Project {
     constructor(name, id) {
         this._id = id;
         this._name = name;
@@ -40,5 +40,3 @@ class Project {
         });
     }
 }
-
-export default Project;

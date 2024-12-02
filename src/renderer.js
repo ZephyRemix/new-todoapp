@@ -1,23 +1,18 @@
-const renderer = (function() {
+export const render = (item) => {
+    // generate projectName, projectId (data-id)
+    const itemConstructor = item.constructor.name;
 
-    const render = (item) => {
-        // generate projectName, projectId (data-id)
-        const itemConstructor = item.constructor.name;
-
-        if (itemConstructor === "Project") {
-            renderProject(item);
-        } else if (itemConstructor === "Task") {
-            renderTask(item);
-        }
-    };
-
-    function renderProject(project) {
-        console.log(`rendering ${project.title}`);
+    if (itemConstructor === "Project") {
+        renderProject(item);
+    } else if (itemConstructor === "Task") {
+        renderTask(item);
     }
+};
 
-    function renderTask(task) {
-        console.log(`rendering ${task.title}`);
-    }
+function renderProject(project) {
+    console.log(`rendering ${project.name}`);
+}
 
-    return {render};
-})();
+function renderTask(task) {
+    console.log(`rendering ${task.title}`);
+}
