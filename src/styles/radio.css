@@ -32,6 +32,20 @@ label.container {
     border-radius: 50%;
 }
 
+.checkmark.priority--high {
+    background-color: var(--priority-high-fill);
+    outline: 2px solid var(--priority-high-border);
+}
+
+.checkmark.priority--medium {
+    background-color: var(--priority-medium-fill);
+    outline: 2px solid var(--priority-medium-border);
+}
+
+.checkmark.priority--low {
+    background-color: var(--priority-low-fill);
+    outline: 2px solid var(--priority-low-border);
+}
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
     background-color: #ccc;

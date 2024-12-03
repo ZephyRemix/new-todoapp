@@ -1,19 +1,28 @@
 import { createProject } from './appController.js';
+import createTaskModal from './taskModalComponent.js';
 
 // cache DOM
-const createProjectBtn = document.querySelector("button[type=submit]");
-const createTaskBtn = document.querySelector(".task");
+const addTaskBtn = document.querySelector(".addTask");
+const taskContainer = document.querySelector(".task__container");
+// const createProjectBtn = document.querySelector("button[type=submit]");
+// const createTaskBtn = document.querySelector(".task");
 
 // register events
-createProjectBtn.addEventListener("click", function(e) {
-    e.preventDefault();
-
-    let projectNameInput = document.querySelector("input[type=text]");
-    createProject(projectNameInput.value);
+addTaskBtn.addEventListener("click", function(e) {
+    const addTaskModal = createTaskModal("add");
+    taskContainer.appendChild(addTaskModal);
 });
 
-createTaskBtn.addEventListener("click", function(e) {
-    e.preventDefault();
+// createProjectBtn.addEventListener("click", function(e) {
+//     e.preventDefault();
 
-    // todo: create task functionality on current project
-});
+//     let projectNameInput = document.querySelector("input[type=text]");
+//     createProject(projectNameInput.value);
+// });
+
+// createTaskBtn.addEventListener("click", function(e) {
+//     e.preventDefault();
+
+//     // todo: create task functionality on current project
+// });
+

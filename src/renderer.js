@@ -1,20 +1,30 @@
-export const render = (item) => {
-    // generate projectName, projectId (data-id)
-    const itemConstructor = item.constructor.name;
+import renderProjectComponent from './projectComponent.js';
+import renderTaskComponent from './taskComponent.js';
+
+let taskWrapper = document.querySelector(".task__wrapper");
+let projectWrapper = document.querySelector("ul");
+
+export const render = (itemArray) => {
+    const itemConstructor = itemArray[0].constructor.name;
 
     if (itemConstructor === "Project") {
-        renderProject(item);
-    } else if (itemConstructor === "Task") {
-        renderTask(item);
+        empty(projectWrapper);
+        itemArray.forEach(project => renderProject(project));
+    } else {
+        empty(taskWrapper)
+        itemArray.forEach(task => renderTask(task));
     }
 };
 
 function renderProject(project) {
-    // todo: to be replaced with actual HTML components
-    console.log(`rendering project: ${project.name}`);
+    renderProjectComponent(project.name);
 }
 
 function renderTask(task) {
-    // todo: to be replaced with actual HTML components
-    console.log(`rendering task: ${task.title}`);
+    console.log(task.id);
+    renderTaskComponent(task.title, task.dueDate, task.priority, task.id, task.projectRef);
+}
+
+function empty(container) {
+    container.innerHTML = "";
 }
