@@ -1,11 +1,198 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-<script defer src="main.js"></script></head>
-<body>
-    
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Nokora:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="main.js"></script>
+    <link href="main.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav>
+      <div class="max-width-wrapper">
+        <h1>To-do App</h1>
+        <div class="nav__actions">
+          <button class="nav__actions__button">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="32px"
+                viewBox="0 -960 960 960"
+                width="32px"
+                fill="hsl(0deg 0% 96%)"
+              >
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-120H640q-30 38-71.5 59T480-240q-47 0-88.5-21T320-320H200v120Zm280-120q38 0 69-22t43-58h168v-360H200v360h168q12 36 43 58t69 22ZM200-200h560-560Z"
+                />
+              </svg>
+            </span>
+            <span class="visually-hidden">Task inbox</span>
+          </button>
+
+          <button class="nav__actions__button">
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="34px"
+                viewBox="0 -960 960 960"
+                width="34px"
+                fill="hsl(0deg 0% 96%)"
+              >
+                <path
+                  d="M360-120q-100 0-170-70t-70-170v-240q0-100 70-170t170-70h240q100 0 170 70t70 170v240q0 100-70 170t-170 70H360Zm80-200 240-240-56-56-184 184-88-88-56 56 144 144Zm-80 120h240q66 0 113-47t47-113v-240q0-66-47-113t-113-47H360q-66 0-113 47t-47 113v240q0 66 47 113t113 47Zm120-280Z"
+                />
+              </svg>
+            </span>
+            <span class="visually-hidden">Completed tasks</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="main__wrapper">
+      <div class="max-width-wrapper">
+        <aside>
+          <div class="project__wrapper">
+            <h3>My Projects</h3>
+            <ul>
+              <li>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="20px"
+                    viewBox="0 -960 960 960"
+                    width="20px"
+                    fill="undefined"
+                  >
+                    <path
+                      d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"
+                    />
+                  </svg>
+                </span>
+                <span>Project</span>
+              </li>
+              <li>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="20px"
+                    viewBox="0 -960 960 960"
+                    width="20px"
+                    fill="undefined"
+                  >
+                    <path
+                      d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"
+                    />
+                  </svg>
+                </span>
+                <span>Project</span>
+              </li>
+              <li>
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="20px"
+                    viewBox="0 -960 960 960"
+                    width="20px"
+                    fill="undefined"
+                  >
+                    <path
+                      d="m240-160 40-160H120l20-80h160l40-160H180l20-80h160l40-160h80l-40 160h160l40-160h80l-40 160h160l-20 80H660l-40 160h160l-20 80H600l-40 160h-80l40-160H360l-40 160h-80Zm140-240h160l40-160H420l-40 160Z"
+                    />
+                  </svg>
+                </span>
+                <span>Project</span>
+              </li>
+            </ul>
+            <button class="button--add">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="20px"
+                  viewBox="0 -960 960 960"
+                  width="20px"
+                  fill="hsl(114deg 27% 38%)"
+                >
+                  <path
+                    d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                  />
+                </svg>
+              </span>
+              <span>Add project</span>
+            </button>
+          </div>
+        </aside>
+
+        <main>
+          <!-- <h2>Inbox</h2> -->
+          <div class="task__container">
+            <div class="task__wrapper">
+              <!-- <div class="task__item">
+                        <div class="task__item--details"> 
+                          <label class="container">Task #1
+                              <input type="radio" name="task_completion_checkbox">
+                              <span class="checkmark"></span>
+                          </label>
+                          <span class="task__due-date">Due date</span>
+                          <div class="task__action--controller">
+                              <button>Edit</button>
+                              <button>Delete</button>
+                          </div>
+                        </div>
+                      </div> -->
+            </div>
+
+            <button class="button--add addTask">
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="20px"
+                  viewBox="0 -960 960 960"
+                  width="20px"
+                  fill="hsl(114deg 27% 38%)"
+                >
+                  <path
+                    d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                  />
+                </svg>
+              </span>
+              <span>Add task</span>
+            </button>
+            <!-- <div class="task__modal task__modal_hidden">
+                    <form>
+                      <label for="task" class="visually-hidden">Task name</label>
+                      <input type="text" id="name" name="name" required placeholder="Meditation"/>
+  
+                      <div class="task__new-details">
+                          <label for="date" class="visually-hidden">Date</label>
+                          <input type="date" id="date" name="date"/>
+  
+                          <label for="priority" class="visually-hidden">Priority level</label>
+                          <select name="priority" id="priority">
+                              <option value="low">Low</option>
+                              <option value="medium">Medium</option>
+                              <option value="high">High</option>
+                              <option value="none">None</option>
+                          </select>
+                      </div>
+                    </form>
+  
+                    <div class="task__modal--controller">
+                      <button id="cancelTaskButton">Cancel</button>
+                      <button id="addTaskButton">Add Task</button>
+                    </div>
+                  </div> -->
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <footer>Copyright © 2024 @Hunyao</footer>
+  </body>
 </html>
