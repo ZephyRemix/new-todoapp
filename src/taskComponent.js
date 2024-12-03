@@ -1,6 +1,6 @@
 import './styles/radio.css';
 import './styles/task.css';
-import createTaskModal from './taskModalComponent.js';
+import createTaskModal from './taskModalComponent';
 
 export default function createTaskItem(
   taskName,
@@ -10,9 +10,9 @@ export default function createTaskItem(
   project,
 ) {
   const currentTask = {
-    taskName: taskName,
+    taskName,
+    priority,
     dueDate: dueDateText,
-    priority: priority,
   };
 
   // Select the parent wrapper
@@ -85,7 +85,7 @@ export default function createTaskItem(
 
   // Append the details div to the main task item div
   taskItem.appendChild(detailsDiv);
-  taskItem.addEventListener('click', function (e) {
+  taskItem.addEventListener('click', (e) => {
     const targetItem = e.target.closest('.task__item');
     if (e.target.textContent === 'Delete') {
       targetItem.remove();

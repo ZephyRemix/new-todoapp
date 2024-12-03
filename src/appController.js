@@ -1,27 +1,12 @@
-import { render } from "./renderer.js";
-import Project from "./project.js";
-import Task from "./task.js";
+import { format } from 'date-fns';
+import render from './renderer';
+import Project from './project';
+import Task from './task';
 
-import { format, compareAsc } from "date-fns";
-
-let projectList = [];
+const projectList = [];
 let projectCount = projectList.length;
 let currentProject;
 let taskCount = 0;
-
-// create default project
-createProject("Project Zero");
-
-// create and display some task for default project
-createTask("Meditate", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "low");
-
-// todo: to be brought over to domController
-// sort task on sort button event listener
-sortTask();
-
-// todo: to be brought over to domController
-// select project based on project (data-id) clicked
-selectProject(0);
 
 // on each addition of project, the project list will be re-rendered
 export function createProject(name) {
@@ -47,9 +32,12 @@ export function createTask(title, dueDate, priority) {
 
 export function editTask(title, dueDate, priority, taskId) {
   const targetTask = currentProject.findTask(taskId);
-  console.log(targetTask.constructor.name);
   targetTask.edit(title, dueDate, priority);
   render(currentProject.taskList);
+}
+
+function findProject(id) {
+  return projectList.filter((project) => project.id === id)[0];
 }
 
 function selectProject(id) {
@@ -64,6 +52,16 @@ function sortTask() {
   render(currentProject.taskList);
 }
 
-function findProject(id) {
-  return projectList.filter((project) => project.id === id)[0];
-}
+// create default project
+createProject('Project Zero');
+
+// create and display some task for default project
+createTask('Meditate', format(new Date(2024, 11, 28), 'dd/MM/yyyy'), 'low');
+
+// todo: to be brought over to domController
+// sort task on sort button event listener
+sortTask();
+
+// todo: to be brought over to domController
+// select project based on project (data-id) clicked
+selectProject(0);

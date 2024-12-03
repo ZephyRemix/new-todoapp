@@ -47,20 +47,20 @@ export default class Task {
 
   static comparePriority = (a, b) => {
     if (
-      a._priority === "high" &&
-      (b._priority === "medium" || b._priority === "low")
+      a._priority === 'high' &&
+      (b._priority === 'medium' || b._priority === 'low')
     ) {
       return -1;
     }
-    if (a._priority === "medium" && b._priority === "low") {
+    if (a._priority === 'medium' && b._priority === 'low') {
       return -1;
     }
-    if (a._priority === "medium" && b._priority === "high") {
+    if (a._priority === 'medium' && b._priority === 'high') {
       return 1;
     }
     if (
-      a._priority === "low" &&
-      (b._priority === "high" || b._priority === "medium")
+      a._priority === 'low' &&
+      (b._priority === 'high' || b._priority === 'medium')
     ) {
       return 1;
     }

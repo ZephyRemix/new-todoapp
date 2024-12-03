@@ -1,5 +1,5 @@
-import './appController.js';
-import './domController.js';
+import './appController';
+import './domController';
 import './styles/reset.css';
 import './styles/config.css';
 import './styles/global.css';
