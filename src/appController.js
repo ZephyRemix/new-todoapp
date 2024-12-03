@@ -13,9 +13,7 @@ let taskCount = 0;
 createProject("Project Zero");
 
 // create and display some task for default project
-createTask("Meditate", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "high", taskCount++, currentProject)
-createTask("Close till", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "low", taskCount++, currentProject)
-createTask("Learn coding", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "medium", taskCount++, currentProject)
+createTask("Meditate", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "low");
 
 // todo: to be brought over to domController
 // sort task on sort button event listener
@@ -36,30 +34,31 @@ export function createProject(name) {
     render(projectList);
 }
 
-function createTask(title, dueDate, priority, id, project) {
-    // todo: to edit id value based on data-id attribute
-    const newTask = new Task(title, dueDate, priority, id, project);
+export function createTask(title, dueDate, priority) {
+    const newTask = new Task(title, dueDate, priority, taskCount++, currentProject);
     currentProject.appendTask(newTask); 
+    render(currentProject.taskList);
+}
+
+export function editTask(title, dueDate, priority, taskId) {
+    const targetTask = currentProject.findTask(taskId);
+    console.log(targetTask.constructor.name);
+    targetTask.edit(title, dueDate, priority);
     render(currentProject.taskList);
 }
 
 function selectProject(id) {
     // identify the selected project based on ID
-    const selectedProject = findProject(id)[0];
-
-    // currentProject = selectedProject
-    currentProject = selectedProject;
-    console.log(`Current selected project: ${currentProject.name}`);
+    const project = findProject(id);
+    currentProject = project;
 }
 
+// todo: to be placed into eventlistener for sort button
 function sortTask() {
-    console.log("Sorting task by priority...");
     currentProject.taskList.sort(Task.comparePriority);
-    currentProject.taskList.forEach(task => {
-        console.log(task.title);
-    });
+    render(currentProject.taskList);
 }
 
 function findProject(id) {
-    return projectList.filter((project) => project.id === id);
+    return projectList.filter((project) => project.id === id)[0];
 }

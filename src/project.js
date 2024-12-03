@@ -22,7 +22,7 @@ export default class Project {
     }
 
     findTask(id) {
-        return this._taskList.filter((task) => task._id === id);
+        return this._taskList.filter((task) => task._id == id)[0];
     }
 
     removeTask(taskId) {

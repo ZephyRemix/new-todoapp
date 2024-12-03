@@ -20,9 +20,3 @@ addTaskBtn.addEventListener("click", function(e) {
 //     createProject(projectNameInput.value);
 // });
 
-// createTaskBtn.addEventListener("click", function(e) {
-//     e.preventDefault();
-
-//     // todo: create task functionality on current project
-// });
-

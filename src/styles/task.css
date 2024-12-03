@@ -10,18 +10,14 @@
     & .task__item {
       display: flex;
       flex-direction: column;
-      height: 4rem;
-      
-      /* padding: 20px 10px 0 10px; */
+      border-bottom: 0.75px solid var(--border-light);
 
       & .task__item--details {
         display: flex;
         justify-content: space-between;
         gap: var(--space-m);
         font-size: var(--font-size-s);
-
         padding: 20px;
-        border-bottom: 0.75px solid var(--border-light);
           
         & > span {
           margin-right: auto; 

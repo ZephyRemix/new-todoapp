@@ -27,6 +27,24 @@ export default class Task {
         return this._id;
     }
 
+    set title(title) {
+        this._title = title;
+    }
+
+    set dueDate(dueDate) {
+        this._dueDate = dueDate;
+    }
+
+    set priority(priority) {
+        this._priority = priority;
+    }
+
+    edit(title, dueDate, priority) {
+        this.title = title;
+        this.dueDate = dueDate;
+        this.priority = priority;
+    }
+
     static comparePriority = (a, b) => {
         if (a._priority === "high" && (b._priority === "medium" || b._priority === "low")) {
             return -1;

@@ -1,6 +1,17 @@
+import './styles/radio.css';
+import './styles/task.css';
+import createTaskModal from './taskModalComponent.js';
+
 export default function createTaskItem(taskName, dueDateText, priority, taskId, project) {
+    const currentTask = {
+      taskName: taskName,
+      dueDate: dueDateText,
+      priority: priority,
+    };
+
     // Select the parent wrapper
     const taskWrapper = document.querySelector(".task__wrapper");
+
     if (!taskWrapper) {
       console.error("Parent wrapper with class 'task__wrapper' not found.");
       return;
@@ -74,8 +85,8 @@ export default function createTaskItem(taskName, dueDateText, priority, taskId, 
         targetItem.remove();
         project.removeTask(taskId);
       } else if (e.target.textContent === "Edit") {
-        console.log("edit"); 
-        // todo: delete item from project.taskList
+        const editModal = createTaskModal("edit", currentTask);
+        targetItem.appendChild(editModal);
       }
     });
   

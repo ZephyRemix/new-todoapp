@@ -21,7 +21,6 @@ function renderProject(project) {
 }
 
 function renderTask(task) {
-    console.log(task.id);
     renderTaskComponent(task.title, task.dueDate, task.priority, task.id, task.projectRef);
 }
 
