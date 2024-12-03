@@ -7,7 +7,7 @@ body {
 
 .max-width-wrapper {
   max-width: 1500px;
-  margin: 0 auto;  
+  margin: 0 auto;
   padding: var(--space-xs) var(--space-m);
   display: flex;
   height: 100%;
@@ -17,18 +17,13 @@ body {
   flex: 1;
 }
 
-aside, main {
+aside,
+main {
   margin-top: calc(var(--space-xs) * -1);
   margin-bottom: calc(var(--space-xs) * -1);
 }
-
-
 
 main {
   flex: 1;
   padding: var(--space-m) var(--space-xl);
 }
-
-
-
-

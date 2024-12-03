@@ -1,5 +1,5 @@
-import { createProject } from './appController.js';
-import createTaskModal from './taskModalComponent.js';
+import { createProject } from "./appController.js";
+import createTaskModal from "./taskModalComponent.js";
 
 // cache DOM
 const addTaskBtn = document.querySelector(".addTask");
@@ -8,9 +8,9 @@ const taskContainer = document.querySelector(".task__container");
 // const createTaskBtn = document.querySelector(".task");
 
 // register events
-addTaskBtn.addEventListener("click", function(e) {
-    const addTaskModal = createTaskModal("add");
-    taskContainer.appendChild(addTaskModal);
+addTaskBtn.addEventListener("click", function (e) {
+  const addTaskModal = createTaskModal("add");
+  taskContainer.appendChild(addTaskModal);
 });
 
 // createProjectBtn.addEventListener("click", function(e) {
@@ -19,4 +19,3 @@ addTaskBtn.addEventListener("click", function(e) {
 //     let projectNameInput = document.querySelector("input[type=text]");
 //     createProject(projectNameInput.value);
 // });
-

@@ -1,12 +1,11 @@
 .task__container {
-    display: flex;
-    flex-direction: column;
-    max-width: 80%;
-    margin: 0 auto;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
 
   & > .task__wrapper {
-
     & .task__item {
       display: flex;
       flex-direction: column;
@@ -18,9 +17,9 @@
         gap: var(--space-m);
         font-size: var(--font-size-s);
         padding: 20px;
-          
+
         & > span {
-          margin-right: auto; 
+          margin-right: auto;
           border-radius: 1rem;
           border: 1px solid var(--border-dark);
           padding: 0 12px;
@@ -32,13 +31,12 @@
         & > .task__action--controller {
           display: flex;
           gap: var(--space-m);
-        
+
           & > button {
             /* todo: change to icon */
           }
         }
-      }      
+      }
     }
   }
 }
-    

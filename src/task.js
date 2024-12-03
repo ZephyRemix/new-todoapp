@@ -1,63 +1,69 @@
 export default class Task {
-    constructor(title, dueDate, priority, id, project) {
-        this._title = title;
-        this._dueDate = dueDate;
-        this._priority = priority;
-        this._id = id;
-        this._projectRef = project;
-    }
+  constructor(title, dueDate, priority, id, project) {
+    this._title = title;
+    this._dueDate = dueDate;
+    this._priority = priority;
+    this._id = id;
+    this._projectRef = project;
+  }
 
-    get title() {
-        return this._title;
-    }
+  get title() {
+    return this._title;
+  }
 
-    get dueDate() {
-        return this._dueDate;
-    }
+  get dueDate() {
+    return this._dueDate;
+  }
 
-    get priority() {
-        return this._priority;
-    }
+  get priority() {
+    return this._priority;
+  }
 
-    get projectRef() {
-        return this._projectRef;
-    }
+  get projectRef() {
+    return this._projectRef;
+  }
 
-    get id() {
-        return this._id;
-    }
+  get id() {
+    return this._id;
+  }
 
-    set title(title) {
-        this._title = title;
-    }
+  set title(title) {
+    this._title = title;
+  }
 
-    set dueDate(dueDate) {
-        this._dueDate = dueDate;
-    }
+  set dueDate(dueDate) {
+    this._dueDate = dueDate;
+  }
 
-    set priority(priority) {
-        this._priority = priority;
-    }
+  set priority(priority) {
+    this._priority = priority;
+  }
 
-    edit(title, dueDate, priority) {
-        this.title = title;
-        this.dueDate = dueDate;
-        this.priority = priority;
-    }
+  edit(title, dueDate, priority) {
+    this.title = title;
+    this.dueDate = dueDate;
+    this.priority = priority;
+  }
 
-    static comparePriority = (a, b) => {
-        if (a._priority === "high" && (b._priority === "medium" || b._priority === "low")) {
-            return -1;
-        }
-        if (a._priority === "medium" && b._priority === "low") {
-            return -1;
-        }
-        if (a._priority === "medium" && b._priority === "high") {
-            return 1;
-        }
-        if (a._priority === "low" && (b._priority === "high" || b._priority === "medium")) {
-            return 1;
-        }
-        return 0;
+  static comparePriority = (a, b) => {
+    if (
+      a._priority === "high" &&
+      (b._priority === "medium" || b._priority === "low")
+    ) {
+      return -1;
     }
+    if (a._priority === "medium" && b._priority === "low") {
+      return -1;
+    }
+    if (a._priority === "medium" && b._priority === "high") {
+      return 1;
+    }
+    if (
+      a._priority === "low" &&
+      (b._priority === "high" || b._priority === "medium")
+    ) {
+      return 1;
+    }
+    return 0;
+  };
 }

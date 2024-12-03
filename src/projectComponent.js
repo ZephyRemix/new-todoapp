@@ -1,5 +1,4 @@
 export default function createProjectItem(projectName) {
-
   const li = document.createElement("li");
 
   const svgSpan = document.createElement("span");

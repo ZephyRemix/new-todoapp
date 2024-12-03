@@ -1,5 +1,5 @@
-import './styles/task_modal.css';
-import { createTask, editTask } from './appController.js';
+import "./styles/task_modal.css";
+import { createTask, editTask } from "./appController.js";
 
 export default function createTaskModal(mode, taskData = {}) {
   // Create the modal wrapper
@@ -60,7 +60,7 @@ export default function createTaskModal(mode, taskData = {}) {
     { value: "none", text: "None" },
   ];
 
-  priorityOptions.forEach(optionData => {
+  priorityOptions.forEach((optionData) => {
     const option = document.createElement("option");
     option.value = optionData.value;
     option.textContent = optionData.text;

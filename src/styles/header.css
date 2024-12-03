@@ -1,22 +1,22 @@
 nav {
-    background-color: var(--bg-color-primary);
-    color: var(--font-color-tertiary);
-    font-size: var(--font-size-m);
-    font-family: var(--logo-font-stack);
-    font-weight: var(--font-heavy);
-    align-content: center;
-    
-    & h1 {
-      padding-top: 4px;
-    }
+  background-color: var(--bg-color-primary);
+  color: var(--font-color-tertiary);
+  font-size: var(--font-size-m);
+  font-family: var(--logo-font-stack);
+  font-weight: var(--font-heavy);
+  align-content: center;
+
+  & h1 {
+    padding-top: 4px;
+  }
 }
-  
-  nav > .max-width-wrapper {
-    justify-content: space-between;
+
+nav > .max-width-wrapper {
+  justify-content: space-between;
 }
-  
-  .nav__actions {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-xl);
+
+.nav__actions {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-xl);
 }
