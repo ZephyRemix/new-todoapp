@@ -1,4 +1,200 @@
 /*!************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/radio.css ***!
+  \************************************************************************/
+label.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  height: 1rem;
+  width: 1rem;
+  /* todo: to change this to be dynamic value based on priority */
+  background-color: var(--priority-medium-fill);
+  outline: 2px solid var(--priority-medium-border);
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.checkmark.priority--high {
+  background-color: var(--priority-high-fill);
+  outline: 2px solid var(--priority-high-border);
+}
+
+.checkmark.priority--medium {
+  background-color: var(--priority-medium-fill);
+  outline: 2px solid var(--priority-medium-border);
+}
+
+.checkmark.priority--low {
+  background-color: var(--priority-low-fill);
+  outline: 2px solid var(--priority-low-border);
+}
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked */
+.container input:checked ~ .checkmark {
+  background-color: var(--button-new-fill);
+  outline: 2px solid var(--button-new-border);
+  outline-offset: 0px;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark::after {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+}
+
+/*!***********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/task.css ***!
+  \***********************************************************************/
+.task__container {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+
+  & > .task__wrapper {
+    & .task__item {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0.75px solid var(--border-light);
+
+      & .task__item--details {
+        display: flex;
+        justify-content: space-between;
+        gap: var(--space-m);
+        font-size: var(--font-size-s);
+        padding: 20px;
+
+        & > span {
+          margin-right: auto;
+          border-radius: 1rem;
+          border: 1px solid var(--border-dark);
+          padding: 0 12px;
+          background-color: var(--bg-color-secondary);
+          font-size: var(--font-size-xs);
+          align-content: center;
+        }
+
+        & > .task__action--controller {
+          display: flex;
+          gap: var(--space-m);
+
+          & > button {
+            /* todo: change to icon */
+          }
+        }
+      }
+    }
+  }
+}
+
+/*!*****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/task_modal.css ***!
+  \*****************************************************************************/
+.task__modal {
+  margin-top: var(--space-m);
+  border-radius: var(--space-s);
+  border: 1px solid var(--border-light);
+  padding: var(--space-m);
+  margin: var(--space-m) 0;
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  & input[type="text"] {
+    border: none;
+    border-bottom: 1px solid var(--border-dark);
+    padding-left: var(--space-s);
+  }
+
+  & .task__new-details {
+    display: flex;
+    gap: var(--space-m);
+
+    & input[type="date"],
+    select {
+      border-radius: var(--space-xs);
+      border: 1px solid var(--border-dark);
+      flex: 1;
+      color: var(--font-color-secondary);
+      text-align: center;
+    }
+  }
+
+  & .task__modal--controller {
+    margin-top: var(--space-m);
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-m);
+    font-weight: var(--font-heavy);
+
+    & button {
+      border-radius: var(--space-s);
+      padding: var(--space-s) var(--space-m);
+    }
+
+    & button:first-of-type {
+      background-color: var(--bg-color-secondary);
+    }
+
+    & button:last-of-type {
+      background-color: var(--button-new-fill);
+    }
+  }
+}
+
+.task__modal_hidden {
+  display: none;
+}
+
+/*!************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/reset.css ***!
   \************************************************************************/
 /*
@@ -82,6 +278,7 @@ h6 {
 #__next {
   isolation: isolate;
 }
+
 /*!*************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/config.css ***!
   \*************************************************************************/
@@ -127,6 +324,7 @@ button {
   ); /*modern browsers, clip-path works inwards from each corner*/
   white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 }
+
 /*!*************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/global.css ***!
   \*************************************************************************/
@@ -182,6 +380,7 @@ html {
   --tablet-and-below: calc((1100 / 16) * 1rem);
   --phone-and-below: calc((550 / 16) * 1rem);
 }
+
 /*!************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/style.css ***!
   \************************************************************************/
@@ -238,6 +437,7 @@ main {
     }
   }
 }
+
 /*!*************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/header.css ***!
   \*************************************************************************/
@@ -295,189 +495,6 @@ aside {
   }
 }
 
-/*!***********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/task.css ***!
-  \***********************************************************************/
-.task__container {
-  display: flex;
-  flex-direction: column;
-  max-width: 80%;
-  margin: 0 auto;
-  margin-top: 1rem;
-
-  & > .task__wrapper {
-    & .task__item {
-      display: flex;
-      flex-direction: column;
-      height: 4rem;
-
-      /* padding: 20px 10px 0 10px; */
-
-      & .task__item--details {
-        display: flex;
-        justify-content: space-between;
-        gap: var(--space-m);
-        font-size: var(--font-size-s);
-
-        padding: 20px;
-        border-bottom: 0.75px solid var(--border-light);
-
-        & > span {
-          margin-right: auto;
-          border-radius: 1rem;
-          border: 1px solid var(--border-dark);
-          padding: 0 12px;
-          background-color: var(--bg-color-secondary);
-          font-size: var(--font-size-xs);
-          align-content: center;
-        }
-
-        & > .task__action--controller {
-          display: flex;
-          gap: var(--space-m);
-
-          & > button {
-            /* todo: change to icon */
-          }
-        }
-      }
-    }
-  }
-}
-
-/*!************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/radio.css ***!
-  \************************************************************************/
-label.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-/* Hide the browser's default radio button */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-/* Create a custom radio button */
-.checkmark {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto 0;
-  height: 1rem;
-  width: 1rem;
-  /* todo: to change this to be dynamic value based on priority */
-  background-color: var(--priority-medium-fill);
-  outline: 2px solid var(--priority-medium-border);
-  outline-offset: 4px;
-  border-radius: 50%;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the radio button is checked */
-.container input:checked ~ .checkmark {
-  background-color: var(--button-new-fill);
-  outline: 2px solid var(--button-new-border);
-  outline-offset: 0px;
-}
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark::after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the indicator (dot/circle) */
-.container .checkmark::after {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ccc;
-}
-/*!*****************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/task_modal.css ***!
-  \*****************************************************************************/
-.task__modal {
-  margin-top: var(--space-m);
-  border-radius: var(--space-s);
-  border: 1px solid var(--border-light);
-  padding: var(--space-m);
-
-  & form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-m);
-  }
-
-  & input[type="text"] {
-    border: none;
-    border-bottom: 1px solid var(--border-dark);
-    padding-left: var(--space-s);
-  }
-
-  & .task__new-details {
-    display: flex;
-    gap: var(--space-m);
-
-    & input[type="date"],
-    select {
-      border-radius: var(--space-xs);
-      border: 1px solid var(--border-dark);
-      flex: 1;
-      color: var(--font-color-secondary);
-      text-align: center;
-    }
-  }
-
-  & .task__modal--controller {
-    margin-top: var(--space-m);
-    display: flex;
-    justify-content: flex-end;
-    gap: var(--space-m);
-    font-weight: var(--font-heavy);
-
-    & button {
-      border-radius: var(--space-s);
-      padding: var(--space-s) var(--space-m);
-    }
-
-    & button:first-of-type {
-      background-color: var(--bg-color-secondary);
-    }
-
-    & button:last-of-type {
-      background-color: var(--button-new-fill);
-    }
-  }
-}
-
-.task__modal_hidden {
-  display: none;
-}
 /*!*************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/footer.css ***!
   \*************************************************************************/
@@ -491,9 +508,3 @@ footer {
   font-size: var(--font-size-xs);
 }
 
-/*!***********************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/test.css ***!
-  \***********************************************************************/
-body {
-  background-color: red;
-}

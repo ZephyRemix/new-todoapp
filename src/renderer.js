@@ -1,13 +1,13 @@
-import renderProjectComponent from "./projectComponent.js";
-import renderTaskComponent from "./taskComponent.js";
+import renderProjectComponent from './projectComponent.js';
+import renderTaskComponent from './taskComponent.js';
 
-let taskWrapper = document.querySelector(".task__wrapper");
-let projectWrapper = document.querySelector("ul");
+let taskWrapper = document.querySelector('.task__wrapper');
+let projectWrapper = document.querySelector('ul');
 
 export const render = (itemArray) => {
   const itemConstructor = itemArray[0].constructor.name;
 
-  if (itemConstructor === "Project") {
+  if (itemConstructor === 'Project') {
     empty(projectWrapper);
     itemArray.forEach((project) => renderProject(project));
   } else {
@@ -31,5 +31,5 @@ function renderTask(task) {
 }
 
 function empty(container) {
-  container.innerHTML = "";
+  container.innerHTML = '';
 }
