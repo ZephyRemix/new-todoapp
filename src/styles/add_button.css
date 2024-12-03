@@ -1,0 +1,20 @@
+.button--add {
+    display: flex;
+    align-items: center;
+    margin-top: var(--space-m);
+
+    & span:first-of-type {
+        color: var(--button-new-border);
+        border-radius: 50%;
+        margin-right: var(--space-m);
+    }
+
+    &:hover {
+        color: var(--button-new-border);
+        font-weight: var(--font-heavy);
+
+        & span:first-of-type {
+            background-color: var(--button-new-fill);
+        }
+    }
+}

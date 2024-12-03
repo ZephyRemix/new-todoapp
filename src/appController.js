@@ -4,7 +4,6 @@ import Task from './task.js';
 
 import { format, compareAsc } from "date-fns";
 
-
 let projectList = [];
 let projectCount = projectList.length;  /* will be used by displayController to generate project data-id */
 let currentProject;
@@ -21,28 +20,27 @@ createTask("Meditate", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "high", cur
 createTask("Close till", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "low", currentProject.name, 1)
 createTask("Learn coding", format(new Date(2024, 11, 28), "dd/MM/yyyy"), "medium", currentProject.name, 2)
 
-displayTask();
-
+// todo: to be brought over to domController
 // sort task on sort button event listener
 sortTask();
 
+// todo: to be brought over to domController
 // remove task on delete button event listener
 removeTask(1);
 
-createProject("new temp project");
-
+// todo: to be brought over to domController
 // select project based on project (data-id) clicked
 selectProject(0);
 
 
+// on each addition of project, the project list will be re-rendered
 export function createProject(name) {
-    console.log(`Creating project...: ${name}`);
     // todo: to edit id value based on data-id attribute
     const newProject = new Project(name, projectCount++);
     projectList.push(newProject);
-    console.log(projectList);
-    // set current project as newly created project
-    currentProject = newProject;
+    currentProject = newProject;    // sets current project to newly created project   
+    // todo: to consider making just the HTML component for the new one
+    // todo: then append it on top of existing HTML 
     displayProject();
 }
 
@@ -78,7 +76,6 @@ function sortTask() {
     currentProject.taskList.sort(Task.comparePriority);
     currentProject.taskList.forEach(task => {
         console.log(task.title);
-        console.log(task.dueDate);
     });
 }
 

@@ -10,9 +10,11 @@ export const render = (item) => {
 };
 
 function renderProject(project) {
-    console.log(`rendering ${project.name}`);
+    // todo: to be replaced with actual HTML components
+    console.log(`rendering project: ${project.name}`);
 }
 
 function renderTask(task) {
-    console.log(`rendering ${task.title}`);
+    // todo: to be replaced with actual HTML components
+    console.log(`rendering task: ${task.title}`);
 }

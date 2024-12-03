@@ -1,0 +1,51 @@
+html {
+    --bg-color-primary: hsl(0deg 0% 13%);
+    --bg-color-secondary: hsl(0deg 0% 96%);
+    --bg-color-tertiary: hsl(0deg 0% 100%);
+
+
+    --font-family: 'Inter';
+    --sys-font-stack: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --app-font-stack: var(--font-family), var(--sys-font-stack);
+    --logo-font-stack: 'Nokora', var(--sys-font-stack);
+
+    --font-color-primary: hsl(0deg 0% 5%);
+    --font-color-secondary: hsl(0deg 0 43);
+    --font-color-tertiary: hsl(0deg 0 100);
+
+    --font-size-xs: 0.75rem;
+    --font-size-s: 1rem;
+    --font-size-m: 1.25rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2rem;
+
+    --font-extra-heavy: 900;
+    --font-heavy: 700;
+    --font-medium: 400;
+    --font-light: 100;
+
+    --priority-high-fill: hsl(1deg 96% 89%);
+    --priority-high-border: hsl(0deg 72% 50%);
+    --priority-medium-fill: hsl(30deg 96% 90%);
+    --priority-medium-border: hsl(34deg 100% 54%);
+    --priority-low-fill: hsl(212deg 95% 92%);
+    --priority-low-border: hsl(216deg 99% 66%);
+    --priority-none-fill: hsl(0deg 0% 100%);
+    --priority-none-border: hsl(0deg 0% 50%);
+
+    --button-new-fill: hsl(76deg 54% 88%);
+    --button-new-border: hsl(114deg 27% 38%);
+
+    --border-light: hsl(30deg 2% 84%);
+    --border-dark: hsl(0deg 0% 50%);
+
+    --space-xs: 4px;
+    --space-s: 8px;
+    --space-m: 16px;
+    --space-l: 24px;
+    --space-xl: 32px;
+
+    --laptop-and-below: calc((1500 / 16) * 1rem);
+    --tablet-and-below: calc((1100 / 16) * 1rem);
+    --phone-and-below: calc((550 / 16) * 1rem);
+}

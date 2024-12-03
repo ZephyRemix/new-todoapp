@@ -1,0 +1,56 @@
+.task__modal {
+    margin-top: var(--space-m);
+    border-radius: var(--space-s);
+    border: 1px solid var(--border-light);
+    padding: var(--space-m);
+    
+    & form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+    }
+
+    & input[type="text"] {
+        border: none;
+        border-bottom: 1px solid var(--border-dark);
+        padding-left: var(--space-s);
+    }
+
+    & .task__new-details {
+        display: flex;
+        gap: var(--space-m);
+        
+        & input[type="date"], select {
+            border-radius: var(--space-xs);
+            border: 1px solid var(--border-dark);
+            flex: 1;
+            color: var(--font-color-secondary);
+            text-align: center;
+        }
+    }
+
+    & .task__modal--controller {
+        margin-top: var(--space-m);
+        display: flex;
+        justify-content: flex-end;
+        gap: var(--space-m);
+        font-weight: var(--font-heavy);
+
+        & button {
+            border-radius: var(--space-s);
+            padding: var(--space-s) var(--space-m);
+        }
+        
+        & button:first-of-type {
+            background-color: var(--bg-color-secondary);
+        }
+
+        & button:last-of-type {
+            background-color: var(--button-new-fill);
+        }
+    }
+}
+
+.task__modal_hidden {
+    display: none;
+}
