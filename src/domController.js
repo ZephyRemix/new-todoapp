@@ -1,4 +1,3 @@
-import { createProject } from './appController';
 import createTaskModal from './taskModalComponent';
 
 // cache DOM

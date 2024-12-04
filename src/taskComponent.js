@@ -1,4 +1,5 @@
-import './styles/radio.css';
+/* eslint-disable no-unused-expressions */
+import './styles/checkbox.css';
 import './styles/task.css';
 import createTaskModal from './taskModalComponent';
 
@@ -7,6 +8,7 @@ export default function createTaskItem(
   dueDateText,
   priority,
   taskId,
+  completionStatus,
   project,
 ) {
   const currentTask = {
@@ -32,6 +34,9 @@ export default function createTaskItem(
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('task__item--details');
 
+  // todo: display strikethrough effect for completed projects
+  completionStatus && detailsDiv.classList.add('completed');
+
   // Create the <label> for the task
   const label = document.createElement('label');
   label.classList.add('container');
@@ -39,8 +44,18 @@ export default function createTaskItem(
 
   // Create the <input> element
   const input = document.createElement('input');
-  input.type = 'radio';
+  input.type = 'checkbox';
   input.name = 'task_completion_checkbox';
+  input.addEventListener('change', function (e) {
+    const taskItemDiv = e.target.closest('.task__item--details');
+    if (this.checked) {
+      taskItemDiv.classList.add('completed');
+      project.completeTask(taskId);
+    } else {
+      taskItemDiv.classList.remove('completed');
+      project.reverseCompleteTask(taskId);
+    }
+  });
 
   // Create the <span> with class "checkmark"
   const checkmark = document.createElement('span');

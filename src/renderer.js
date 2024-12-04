@@ -14,6 +14,7 @@ function renderTask(task) {
     task.dueDate,
     task.priority,
     task.id,
+    task.completed,
     task.projectRef,
   );
 }

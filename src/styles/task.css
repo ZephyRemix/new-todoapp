@@ -11,6 +11,11 @@
       flex-direction: column;
       border-bottom: 0.75px solid var(--border-light);
 
+      & .completed {
+        text-decoration: line-through;
+        color: var(--font-color-secondary);
+      }
+
       & .task__item--details {
         display: flex;
         justify-content: space-between;

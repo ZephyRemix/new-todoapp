@@ -3,16 +3,16 @@ html {
   --bg-color-secondary: hsl(0deg 0% 96%);
   --bg-color-tertiary: hsl(0deg 0% 100%);
 
-  --font-family: "Inter";
+  --font-family: 'Inter';
   --sys-font-stack: Iowan Old Style, Apple Garamond, Baskerville,
     Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --app-font-stack: var(--font-family), var(--sys-font-stack);
-  --logo-font-stack: "Nokora", var(--sys-font-stack);
+  --logo-font-stack: 'Nokora', var(--sys-font-stack);
 
   --font-color-primary: hsl(0deg 0% 5%);
-  --font-color-secondary: hsl(0deg 0 43);
-  --font-color-tertiary: hsl(0deg 0 100);
+  --font-color-secondary: hsl(0deg 0% 43%);
+  --font-color-tertiary: hsl(0deg 0% 100%);
 
   --font-size-xs: 0.75rem;
   --font-size-s: 1rem;

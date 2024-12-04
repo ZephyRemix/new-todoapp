@@ -4,6 +4,7 @@ export default class Task {
     this._dueDate = dueDate;
     this._priority = priority;
     this._id = id;
+    this._completed = false;
     this._projectRef = project;
   }
 
@@ -23,6 +24,10 @@ export default class Task {
     return this._projectRef;
   }
 
+  get completed() {
+    return this._completed;
+  }
+
   get id() {
     return this._id;
   }
@@ -37,6 +42,10 @@ export default class Task {
 
   set priority(priority) {
     this._priority = priority;
+  }
+
+  set completed(status) {
+    this._completed = status;
   }
 
   edit(title, dueDate, priority) {
