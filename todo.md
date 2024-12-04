@@ -9,13 +9,14 @@
    ~> This means no changes to taskList.
    ~> each time new task is added, go through the taskList and add ".completed" class to those with .\_completed = true;
 
-[] Add conditional statement to not show the date box if no date is provided
-[] Add a view page for completed task
--> [] addEventListener for completed icon
--> [] render all tasks (across all projects) with .\_completed == true
-[] Add a view page for general task view
--> [] addEventListener for inbox icon
--> [] render all tasks (across all projects) with .\_completed == false
+[x] Add conditional statement to not show the date box if no date is provided
+[x] Add a view page for completed task
+-> [x] addEventListener for completed icon
+-> [x] render all tasks (across all projects) with .\_completed == true
+[x] Add a view page for general task view
+-> [x] addEventListener for inbox icon
+-> [x] render all tasks (across all projects) with .\_completed == false
+[] Add sort icon button to sort task based on priority
 
 [] Add ability to add projects
 -> [] new project modal

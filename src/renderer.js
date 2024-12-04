@@ -8,7 +8,7 @@ function renderProject(project) {
   renderProjectComponent(project.name);
 }
 
-function renderTask(task) {
+export function renderTask(task) {
   renderTaskComponent(
     task.title,
     task.dueDate,
@@ -19,11 +19,11 @@ function renderTask(task) {
   );
 }
 
-function empty(container) {
+export function empty(container) {
   container.innerHTML = '';
 }
 
-export default function render(itemArray) {
+export default function renderList(itemArray) {
   const itemConstructor = itemArray[0].constructor.name;
 
   if (itemConstructor === 'Project') {

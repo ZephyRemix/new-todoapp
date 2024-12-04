@@ -1,7 +1,7 @@
 export default function createProjectItem(projectName) {
-  const li = document.createElement("li");
+  const li = document.createElement('li');
 
-  const svgSpan = document.createElement("span");
+  const svgSpan = document.createElement('span');
 
   const svgMarkup = `
     <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="undefined">
@@ -13,11 +13,11 @@ export default function createProjectItem(projectName) {
 
   li.appendChild(svgSpan);
 
-  const textSpan = document.createElement("span");
+  const textSpan = document.createElement('span');
   textSpan.textContent = projectName;
 
   li.appendChild(textSpan);
 
-  const parent = document.querySelector("ul");
+  const parent = document.querySelector('ul');
   parent.appendChild(li);
 }

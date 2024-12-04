@@ -3,7 +3,7 @@ import render from './renderer';
 import Project from './project';
 import Task from './task';
 
-const projectList = [];
+export const projectList = [];
 let projectCount = projectList.length;
 let currentProject;
 let taskCount = 0;
