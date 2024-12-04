@@ -34,7 +34,6 @@ export default function createTaskItem(
   const detailsDiv = document.createElement('div');
   detailsDiv.classList.add('task__item--details');
 
-  // todo: display strikethrough effect for completed projects
   completionStatus && detailsDiv.classList.add('completed');
 
   // Create the <label> for the task
@@ -73,9 +72,12 @@ export default function createTaskItem(
   label.appendChild(checkmark);
 
   // Create the <span> for the due date
-  const dueDate = document.createElement('span');
-  dueDate.classList.add('task__due-date');
-  dueDate.textContent = dueDateText;
+  let dueDate;
+  if (dueDateText !== '') {
+    dueDate = document.createElement('span');
+    dueDate.textContent = dueDateText;
+    dueDate.classList.add('task__due-date');
+  }
 
   // Create the <div> for the action buttons
   const actionController = document.createElement('div');
@@ -95,7 +97,7 @@ export default function createTaskItem(
 
   // Append all elements to the details div
   detailsDiv.appendChild(label);
-  detailsDiv.appendChild(dueDate);
+  dueDate !== undefined && detailsDiv.appendChild(dueDate);
   detailsDiv.appendChild(actionController);
 
   // Append the details div to the main task item div
