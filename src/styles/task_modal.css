@@ -11,7 +11,8 @@
     gap: var(--space-m);
   }
 
-  & input[type="text"] {
+  & input[type='text'] {
+    background: inherit;
     border: none;
     border-bottom: 1px solid var(--border-dark);
     padding-left: var(--space-s);
@@ -21,7 +22,7 @@
     display: flex;
     gap: var(--space-m);
 
-    & input[type="date"],
+    & input[type='date'],
     select {
       border-radius: var(--space-xs);
       border: 1px solid var(--border-dark);
@@ -44,15 +45,11 @@
     }
 
     & button:first-of-type {
-      background-color: var(--bg-color-secondary);
+      background-color: inherit;
     }
 
     & button:last-of-type {
       background-color: var(--button-new-fill);
     }
   }
-}
-
-.task__modal_hidden {
-  display: none;
 }

@@ -19,4 +19,11 @@ nav > .max-width-wrapper {
   display: flex;
   justify-content: space-between;
   gap: var(--space-xl);
+  fill: white;
+
+  & button:hover,
+  button:active,
+  button:focus {
+    fill: var(--accent-color);
+  }
 }

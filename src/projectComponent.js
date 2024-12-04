@@ -1,5 +1,10 @@
-export default function createProjectItem(projectName) {
+import { selectProject } from './appController';
+
+export default function createProjectItem(projectName, id) {
   const li = document.createElement('li');
+  li.setAttribute('data-projectId', id);
+
+  const projectBtn = document.createElement('button');
 
   const svgSpan = document.createElement('span');
 
@@ -10,13 +15,18 @@ export default function createProjectItem(projectName) {
   `;
 
   svgSpan.innerHTML = svgMarkup;
-
-  li.appendChild(svgSpan);
+  projectBtn.appendChild(svgSpan);
 
   const textSpan = document.createElement('span');
   textSpan.textContent = projectName;
 
-  li.appendChild(textSpan);
+  projectBtn.appendChild(textSpan);
+
+  projectBtn.addEventListener('click', (e) => {
+    selectProject(e.target.closest('li').dataset.projectid);
+  });
+
+  li.appendChild(projectBtn);
 
   const parent = document.querySelector('ul');
   parent.appendChild(li);

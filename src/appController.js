@@ -13,8 +13,7 @@ export function createProject(name) {
   const newProject = new Project(name, projectCount++);
   projectList.push(newProject);
   currentProject = newProject; // sets current project to newly created project
-  // todo: to consider making just the HTML component for the new one
-  // todo: then append it on top of existing HTML
+  render(currentProject.taskList);
   render(projectList);
 }
 
@@ -40,10 +39,11 @@ function findProject(id) {
   return projectList.filter((project) => project.id === id)[0];
 }
 
-function selectProject(id) {
+export function selectProject(id) {
   // identify the selected project based on ID
-  const project = findProject(id);
+  const project = findProject(Number(id));
   currentProject = project;
+  render(currentProject.taskList);
 }
 
 // todo: to be placed into eventlistener for sort button
@@ -60,8 +60,4 @@ createTask('Meditate', format(new Date(2024, 11, 28), 'dd/MM/yyyy'), 'low');
 
 // todo: to be brought over to domController
 // sort task on sort button event listener
-sortTask();
-
-// todo: to be brought over to domController
-// select project based on project (data-id) clicked
-selectProject(0);
+// sortTask();

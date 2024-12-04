@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 export default class Project {
   constructor(name, id) {
     this._id = id;
@@ -24,7 +23,7 @@ export default class Project {
   }
 
   findTask(id) {
-    return this._taskList.filter((task) => task._id == id)[0];
+    return this._taskList.filter((task) => task._id === Number(id))[0];
   }
 
   remove(taskItem) {
@@ -47,12 +46,5 @@ export default class Project {
   reverseCompleteTask(taskId) {
     const currTask = this.findTask(taskId);
     currTask.completed = false;
-  }
-
-  // todo: to implement this in Task class
-  displayTask() {
-    this._taskList.forEach((task) => {
-      task.displayTask();
-    });
   }
 }

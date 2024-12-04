@@ -17,11 +17,19 @@ aside {
     gap: var(--space-xs);
     padding-left: 0;
 
-    & > li {
+    & button {
+      padding: var(--space-xs) var(--space-s);
       display: flex;
       gap: var(--space-m);
       align-items: center;
-      margin-right: auto;
+      width: 80%;
+      border-radius: var(--space-s);
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: var(--priority-low-fill);
+      }
     }
   }
 }

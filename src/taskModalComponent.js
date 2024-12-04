@@ -1,5 +1,5 @@
 import './styles/task_modal.css';
-import { createTask, editTask } from './appController.js';
+import { createTask, editTask } from './appController';
 
 export default function createTaskModal(mode, taskData = {}) {
   // Create the modal wrapper
@@ -101,7 +101,7 @@ export default function createTaskModal(mode, taskData = {}) {
   controllerDiv.appendChild(actionButton);
 
   // Add event listener to handle actions
-  controllerDiv.addEventListener('click', function (e) {
+  controllerDiv.addEventListener('click', (e) => {
     const taskModalDiv = e.target.closest('.task__modal');
 
     if (e.target.id === 'cancelTaskButton') {

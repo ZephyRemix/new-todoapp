@@ -13,6 +13,7 @@ html {
   --font-color-primary: hsl(0deg 0% 5%);
   --font-color-secondary: hsl(0deg 0% 43%);
   --font-color-tertiary: hsl(0deg 0% 100%);
+  --accent-color: hsl(45deg 90% 50%);
 
   --font-size-xs: 0.75rem;
   --font-size-s: 1rem;

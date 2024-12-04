@@ -18,7 +18,8 @@
 -> [x] render all tasks (across all projects) with .\_completed == false
 [] Add sort icon button to sort task based on priority
 
-[] Add ability to add projects
--> [] new project modal
--> [] upon creation, opens up a new page with its own set of tasks
--> []
+[x] Add ability to add projects
+-> [x] convert project li elements into clickable links/buttons
+-> [x] new project modal component
+-> [x] upon creation, opens up a new page with its own set of tasks
+-> [x] when switching back to existing project, the old tasks are re-rendered

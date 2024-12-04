@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import createTaskModal from './taskModalComponent';
+import createProjectModal from './projectModalComponent';
 import { projectList } from './appController';
 import { renderTask, empty } from './renderer';
 
@@ -8,8 +9,8 @@ const addTaskBtn = document.querySelector('.addTask');
 const taskContainer = document.querySelector('.task__container');
 const completedInboxBtn = document.querySelector('.completed__tasks');
 const generalInboxBtn = document.querySelector('.inbox');
-// const createProjectBtn = document.querySelector("button[type=submit]");
-// const createTaskBtn = document.querySelector(".task");
+const addProjectBtn = document.querySelector('.button--add');
+const projectWrapper = document.querySelector('.project__wrapper');
 
 // register events
 addTaskBtn.addEventListener('click', () => {
@@ -34,9 +35,8 @@ generalInboxBtn.addEventListener('click', () => {
     });
   });
 });
-// createProjectBtn.addEventListener("click", function(e) {
-//     e.preventDefault();
 
-//     let projectNameInput = document.querySelector("input[type=text]");
-//     createProject(projectNameInput.value);
-// });
+addProjectBtn.addEventListener('click', () => {
+  const addProjectModal = createProjectModal();
+  projectWrapper.appendChild(addProjectModal);
+});

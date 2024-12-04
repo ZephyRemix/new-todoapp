@@ -5,7 +5,7 @@ const taskWrapper = document.querySelector('.task__wrapper');
 const projectWrapper = document.querySelector('ul');
 
 function renderProject(project) {
-  renderProjectComponent(project.name);
+  renderProjectComponent(project.name, project.id);
 }
 
 export function renderTask(task) {
@@ -24,7 +24,8 @@ export function empty(container) {
 }
 
 export default function renderList(itemArray) {
-  const itemConstructor = itemArray[0].constructor.name;
+  const itemConstructor =
+    itemArray[0] !== undefined && itemArray[0].constructor.name;
 
   if (itemConstructor === 'Project') {
     empty(projectWrapper);
